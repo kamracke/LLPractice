@@ -2,20 +2,29 @@
 //
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+//int main()
+//{
+    //std::cout << "Hello World!\n";
+//}
+//
 
 
-
-Class Node{
-public
+class Node{
+public:
+	Node* next;
 	int data;
-	Node* next
-};
+	};
+
+void printList(Node* n)
+{
+	while (n != NULL) {
+		cout << n->data << " ";
+		n = n->next;
+	}
+}
 
 int main()
 {
@@ -31,10 +40,12 @@ int main()
 	head->next = second;
 
 	second->data = 2;
-	second->next = third
+	second->next = third;
 
-	third->data = 3
-	third->next = NULL
+	third->data = 3;
+	third->next = NULL;
+
+	printList(head);
 
 	return 0;
 
